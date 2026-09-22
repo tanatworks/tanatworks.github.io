@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* Phones: lay the page out at A4 width (860px incl. margins) and let the browser scale it to fit the screen */
+(function () {
+  if (window.self === window.top && screen.width < 860) {
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=860, viewport-fit=cover');
+  }
+})();
+</script>
 <title>Tanat Kerdtip — Resume</title>
 <meta property="og:title" content="Tanat Kerdtip — Resume">
 <meta property="og:description" content="Computer Science student at Thammasat University, interested in Platform Engineering and DevOps.">
@@ -25,7 +33,7 @@
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
-html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 *, *::before, *::after { box-sizing: border-box; }
 body {
   margin: 0;
@@ -222,12 +230,12 @@ ul.points li { margin: 0; padding-left: 2px; }
 </main>
 <script>
 (function () {
+  if (window.self === window.top) return;
   var sheet = document.querySelector('.sheet');
   function fit() {
-    var full = sheet.offsetWidth;          /* 210mm in CSS px */
-    var avail = window.innerWidth - 16;
+    sheet.style.zoom = '';
+    var full = sheet.offsetWidth, avail = document.documentElement.clientWidth - 16;
     sheet.style.zoom = avail < full ? (avail / full).toFixed(3) : '';
-    sheet.style.marginTop = avail < full ? '8px' : '';
   }
   fit();
   window.addEventListener('resize', fit);
