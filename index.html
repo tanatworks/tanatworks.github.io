@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tanat Kerdtip — Portfolio</title>
+<meta name="description" content="Tanat Kerdtip, Computer Science student at Thammasat University focused on Platform Engineering and DevOps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #ffffff;
+  --desk: #eef0f4;
+  --ink: #1d1d1f;
+  --ink-soft: #4a4d55;
+  --navy: #1b3a6b;
+ 
+  --shadow: 0 1px 2px rgba(20,30,60,.05), 0 10px 30px rgba(20,30,60,.08);
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1a1c21; --desk: #111215; --ink: #eceef2; --ink-soft: #b4b8c2;
+    --navy: #8fb0e6; --shadow: 0 0 0 1px #2a2d34;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1a1c21; --desk: #111215; --ink: #eceef2; --ink-soft: #b4b8c2;
+  --navy: #8fb0e6; --shadow: 0 0 0 1px #2a2d34;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--desk);
+  color: var(--ink);
+  font-family: "EB Garamond", Garamond, "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.sheet {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  margin: 2rem auto;
+  padding: 14mm 15mm;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; border-radius: 2px; }
+
+/* Header */
+header { text-align: center; }
+h1 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 44px; font-weight: 600; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: .02em;
+}
+.headline { margin: 4px 0 0; font-size: 19px; font-weight: 500; color: var(--ink-soft); }
+.contact {
+  margin: 10px 0 0; padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 0;
+  font-size: 16px;
+}
+.contact li { white-space: nowrap; }
+.contact li:not(:last-child)::after { content: "|"; margin: 0 10px; color: var(--ink-soft); }
+.contact a { text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+
+/* Sections */
+section { margin-top: 30px; }
+h2 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: 19px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .01em;
+}
+.summary { margin: 0; }
+.entry { margin-bottom: 14px; }
+.entry:last-child { margin-bottom: 0; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.title { font-weight: 600; }
+.when { font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+.sub { color: var(--ink-soft); font-weight: 500; }
+.date { white-space: nowrap; flex-shrink: 0; }
+.stack { color: var(--ink-soft); font-weight: 400; }
+ul.points { margin: 3px 0 0; padding-left: 28px; }
+ul.points li { margin: 1px 0; padding-left: 2px; }
+ul.points li::marker { color: var(--ink); }
+.lead { font-weight: 600; }
+
+footer { margin-top: 36px; text-align: center; font-size: 13px; color: var(--ink-soft); }
+
+@media (max-width: 680px) {
+  body { font-size: 16px; }
+  .sheet { width: auto; min-height: 0; margin: 0; padding: 28px 20px 36px; box-shadow: none; }
+  h1 { font-size: 34px; }
+  .contact { font-size: 15px; }
+  .headline { font-size: 16px; }
+  .row { flex-direction: column; gap: 0; }
+  .when, .date { font-weight: 500; color: var(--ink-soft); white-space: normal; }
+}
+
+@media print {
+  :root { --paper:#fff; --ink:#1d1d1f; --ink-soft:#4a4d55; --navy:#1b3a6b; padding: 0; }
+  @page { size: A4; margin: 9mm 12mm; }
+  body { background: #fff; font-size: 10pt; line-height: 1.26; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sheet { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; max-width: none; }
+  footer { display: none; }
+  h1 { font-size: 22pt; }
+  .headline { font-size: 11.5pt; margin-top: 1px; }
+  .contact { font-size: 9.4pt; margin-top: 3px; flex-wrap: nowrap; }
+  .contact li:not(:last-child)::after { margin: 0 7px; }
+  section { margin-top: 6px; }
+  h2 { font-size: 11.5pt; margin-bottom: 2px; padding-bottom: 0; break-after: avoid; }
+  .entry { margin-bottom: 4px; break-inside: avoid; }
+  ul.points { margin-top: 1px; padding-left: 18px; }
+  ul.points li { margin: 0; }
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header>
+    <h1>Tanat Kerdtip</h1>
+    <p class="headline">DevOps &amp; Platform Engineering</p>
+    <ul class="contact">
+      <li><a href="tel:+66991817913">(+66) 99 181 7913</a></li>
+      <li><a href="mailto:tanat.kerdtip@gmail.com">tanat.kerdtip@gmail.com</a></li>
+      <li><a href="https://github.com/tanatworks" target="_blank" rel="noopener">github.com/tanatworks</a></li>
+      <li><a href="https://www.linkedin.com/in/tanat-kerdtip/" target="_blank" rel="noopener">linkedin.com/in/tanat-kerdtip</a></li>
+      <li>Pathum Thani, Thailand</li>
+    </ul>
+  </header>
+
+  <section aria-labelledby="sum">
+    <h2 id="sum">Summary</h2>
+    <p class="summary">Computer Science student at Thammasat University (Minor in DevOps, GPA 3.96) interested in Platform Engineering and DevOps. Hands-on experience with AWS, Infrastructure as Code, Docker, and working in Agile teams.</p>
+  </section>
+
+  <section aria-labelledby="edu">
+    <h2 id="edu">Education</h2>
+    <div class="entry">
+      <div class="row"><span class="title">Thammasat University</span><span class="when">Pathum Thani, Thailand</span></div>
+      <div class="row sub"><span>B.Sc. in Computer Science, Minor in DevOps (GPA: 3.96 / 4.00)</span><span class="date">2023 – Present</span></div>
+      <ul class="points">
+        <li><span class="lead">Relevant Coursework:</span> Cloud Architecture, Big Data Engineering, Linux Administration &amp; Monitoring, DevOps Pipelines, Microservices &amp; Serverless</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="exp">
+    <h2 id="exp">Experience</h2>
+    <div class="entry">
+      <div class="row"><span class="title">CDG Systems (CDG Group)</span><span class="when">Jun 2026 – Present</span></div>
+      <div class="row sub"><span>Programmer Intern</span><span class="date">Bangkok, Thailand</span></div>
+      <ul class="points">
+        <li>Developed and maintained features for enterprise applications alongside senior developers, following the team’s coding standards and review process.</li>
+        <li>Built and tested RESTful APIs and database queries, using Postman to verify endpoints before release.</li>
+        <li>Worked in an Agile team, taking part in daily stand-ups and sprint reviews and managing code through Git.</li>
+        <li>Investigated and fixed bugs reported during testing, and documented changes for handover to the team.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="proj">
+    <h2 id="proj">Projects</h2>
+
+    <div class="entry">
+      <div class="row"><span><span class="title">Miley – Product Recommendation LINE Chatbot</span><span class="stack"> | AWS, CloudFormation, SQS, Qwen3, LINE API</span></span><span class="when">Aug – Dec 2025</span></div>
+      <div class="sub">Backend &amp; DevOps Developer</div>
+      <ul class="points">
+        <li>Provisioned secure AWS infrastructure (ECS, DynamoDB, VPC) with CloudFormation (IaC) for consistent, repeatable deployments.</li>
+        <li>Integrated the Qwen3 LLM with the LINE Messaging API to deliver dynamic, context-aware product recommendations.</li>
+        <li>Implemented AWS SQS to decouple services and keep the system reliable during traffic spikes.</li>
+        <li>Optimized system performance to achieve sub-second API response times under high traffic.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row"><span><span class="title">Firearm Detection for Public Safety</span><span class="stack"> | Python, YOLOv11, Roboflow</span></span><span class="when">Jan – May 2025</span></div>
+      <div class="sub">AI/ML Developer</div>
+      <ul class="points">
+        <li>Trained a YOLOv11 object-detection model to distinguish realistic firearms from water guns for public safety surveillance during Thailand’s Songkran Festival.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row"><span><span class="title">Chalapao – Online Borrowing Website</span><span class="stack"> | Next.js, Deno, Docker</span></span><span class="when">Jan – May 2025</span></div>
+      <div class="sub">Frontend Developer</div>
+      <ul class="points">
+        <li>Developed a full-stack inventory management system, improving item-tracking efficiency.</li>
+        <li>Deployed with Docker to keep environments consistent and improve system reliability.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row"><span><span class="title">Online Petition Submission Web App</span><span class="stack"> | Express, Spring Boot, Docker</span></span><span class="when">Aug – Dec 2024</span></div>
+      <div class="sub">Full-stack Developer</div>
+      <ul class="points">
+        <li>Developed a student petition tracking system to streamline the submission process.</li>
+        <li>Containerized services with Docker and collaborated in an Agile team for iterative feature delivery.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="skills">
+    <h2 id="skills">Technical Skills</h2>
+    <ul class="points">
+      <li><span class="lead">Languages:</span> Python, JavaScript, Java, C, C++, SQL, Bash</li>
+      <li><span class="lead">Cloud &amp; DevOps:</span> AWS (EC2, S3, Lambda, DynamoDB, SQS, VPC, CloudFormation), Docker, GitHub Actions, Linux</li>
+      <li><span class="lead">Frameworks:</span> React.js, Angular, Node.js, Express.js, Spring Boot, Quarkus, Tailwind CSS</li>
+      <li><span class="lead">Databases:</span> MongoDB, MySQL</li>
+      <li><span class="lead">Data:</span> Pandas, data cleaning and visualization</li>
+      <li><span class="lead">Developer Tools:</span> Git/GitHub, Postman, Figma</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="lead">
+    <h2 id="lead">Leadership &amp; Activities</h2>
+    <div class="entry">
+      <div class="row"><span class="title">Welfare Staff, Thammasat Freshy Games</span><span class="when">Oct 2025</span></div>
+      <ul class="points"><li>Supported event operations and coordinated welfare services for participants and organizing teams.</li></ul>
+    </div>
+    <div class="entry">
+      <div class="row"><span class="title">Event Staff, CSTU Open House</span><span class="when">Nov 2023 &amp; Nov 2024</span></div>
+      <ul class="points"><li>Guided prospective students with information and advice about the Computer Science program.</li></ul>
+    </div>
+    <div class="entry">
+      <div class="row"><span class="title">Venue Staff, CSTU First Meet 2024</span><span class="when">Aug 2024</span></div>
+      <ul class="points"><li>Coordinated venue setup and ensured safety protocols for the CS freshman welcoming event.</li></ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="lang">
+    <h2 id="lang">Languages</h2>
+    <p class="summary">Thai (native), English (upper-intermediate, B2, TOEIC 840), Japanese (basic, JLPT N5)</p>
+  </section>
+
+  <footer>Press Ctrl+P (or ⌘+P) to save this page as a PDF résumé.</footer>
+</main>
+</body>
+</html>
