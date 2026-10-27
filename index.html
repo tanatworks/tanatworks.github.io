@@ -13,10 +13,10 @@
 </script>
 <title>Tanat Kerdtip — Resume</title>
 <meta property="og:title" content="Tanat Kerdtip — Resume">
-<meta property="og:description" content="Computer Science student at Thammasat University, interested in Platform Engineering and DevOps.">
+<meta property="og:description" content="Computer Science student at Thammasat University, interested in DevOps, DevSecOps, and Platform Engineering.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://tanatworks.github.io/">
-<meta name="description" content="Resume of Tanat Kerdtip, Computer Science student at Thammasat University, interested in Platform Engineering and DevOps.">
+<meta name="description" content="Resume of Tanat Kerdtip, Computer Science student at Thammasat University, interested in DevOps, DevSecOps, and Platform Engineering.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Digits only: Georgia's numbers are old-style (uneven heights), so 0-9 come from Source Serif 4 -->
@@ -41,7 +41,7 @@ body {
   color: var(--ink);
   font-family: "Source Serif 4", Georgia, "Times New Roman", Times, serif;
   font-variant-numeric: lining-nums tabular-nums;
-  font-size: 9.1pt;
+  font-size: 9.3pt;
   line-height: 1.32;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -113,7 +113,7 @@ ul.points li { margin: 0; padding-left: 2px; }
 
   <header>
     <h1>Tanat Kerdtip</h1>
-    <p class="headline">DevOps &amp; Platform Engineering</p>
+    <p class="headline">DevOps, DevSecOps &amp; Platform Engineering</p>
     <ul class="contact">
       <li><a href="tel:+66991817913">(+66) 99 181 7913</a></li>
       <li><a href="mailto:tanat.kerdtip@gmail.com">tanat.kerdtip@gmail.com</a></li>
@@ -125,14 +125,14 @@ ul.points li { margin: 0; padding-left: 2px; }
 
   <section aria-labelledby="sum">
     <h2 id="sum">Summary</h2>
-    <p class="summary">Computer Science student at Thammasat University with a Minor in DevOps, interested in Platform Engineering and DevOps. Hands-on experience with AWS, Infrastructure as Code, Docker, and working in Agile teams.</p>
+    <p class="summary">Computer Science student at Thammasat University with a Minor in DevOps, interested in DevOps, DevSecOps, and Platform Engineering. Hands-on experience building CI/CD pipelines with security scanning, provisioning AWS infrastructure with Terraform, and deploying to Kubernetes.</p>
   </section>
 
   <section aria-labelledby="edu">
     <h2 id="edu">Education</h2>
     <div class="entry">
       <div class="row"><span class="title">Thammasat University</span><span class="when">Pathum Thani, Thailand</span></div>
-      <div class="row sub"><span>B.Sc. in Computer Science, Minor in DevOps (GPA: 3.96 / 4.00)</span><span class="date">2023 – Present</span></div>
+      <div class="row sub"><span>B.Sc. in Computer Science, Minor in DevOps (GPA: 3.97 / 4.00)</span><span class="date">2023 – May 2027 (Expected)</span></div>
       <ul class="points">
         <li><span class="lead">Relevant Coursework:</span> Cloud Architecture, Big Data Engineering, Linux Administration &amp; Monitoring, DevOps Pipelines, Microservices &amp; Serverless</li>
       </ul>
@@ -145,10 +145,18 @@ ul.points li { margin: 0; padding-left: 2px; }
       <div class="row"><span class="title">CDG Systems (CDG Group)</span><span class="when">Jun 2026 – Present</span></div>
       <div class="row sub"><span>Programmer Intern</span><span class="date">Bangkok, Thailand</span></div>
       <ul class="points">
-        <li>Modernized legacy enterprise web systems by rebuilding them with a modern web stack, making them easier to maintain and more user-friendly than the original versions.</li>
+        <li>Rebuilt legacy enterprise web systems with a modern web stack, making them easier to maintain and use.</li>
         <li>Built and tested RESTful APIs and database queries.</li>
         <li>Worked in an Agile team, taking part in daily stand-ups and sprint reviews and managing code through Git.</li>
         <li>Investigated and fixed bugs reported during testing, and documented changes for handover to the team.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="row"><span class="title">Thammasat University</span><span class="when">Mar – May 2026</span></div>
+      <div class="row sub"><span>Teaching Assistant, CS222 Operating Systems</span><span class="date">Pathum Thani, Thailand</span></div>
+      <ul class="points">
+        <li>Assisted the instructor with course tasks for a class of 80+ students.</li>
+        <li>Graded Linux, Bash, and C process-management assignments.</li>
       </ul>
     </div>
   </section>
@@ -157,39 +165,33 @@ ul.points li { margin: 0; padding-left: 2px; }
     <h2 id="proj">Projects</h2>
 
     <div class="entry">
+      <div class="row"><span><span class="title">Geemu – DevSecOps Pipeline on AWS</span><span class="stack"> | Jenkins, Terraform, EKS, ArgoCD, Trivy</span></span><span class="when">Mar – May 2026</span></div>
+      <div class="sub">DevOps Engineer</div>
+      <ul class="points">
+        <li>Provisioned Jenkins on EC2 and an Amazon EKS cluster with Terraform, and automated ArgoCD setup in Jenkins.</li>
+        <li>Built a 12-stage Jenkins CI/CD pipeline with SAST (SonarQube), dependency scanning (OWASP), and container image scanning (Trivy).</li>
+        <li>Deployed to EKS via GitOps with ArgoCD, with GitHub Actions triggering builds and skipping [skip ci] commits.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row"><span><span class="title">MonitorDisaster Microservice</span><span class="stack"> | Node.js, AWS (SQS, SNS, DynamoDB), Docker</span></span><span class="when">Jan – May 2026</span></div>
+      <div class="sub">Backend &amp; Cloud Developer</div>
+      <ul class="points">
+        <li>Built a REST API that ingests real-time sensor data and publishes disaster alerts via Amazon SNS.</li>
+        <li>Processed cross-cloud events from Amazon SQS and stored area status and incident reports in DynamoDB.</li>
+        <li>Added a retry worker with exponential backoff and trace IDs to keep data consistent across services.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
       <div class="row"><span><span class="title">Miley – Product Recommendation LINE Chatbot</span><span class="stack"> | AWS, CloudFormation, SQS, LINE API</span></span><span class="when">Aug – Dec 2025</span></div>
       <div class="sub">Backend &amp; DevOps Developer</div>
       <ul class="points">
-        <li>Provisioned secure AWS infrastructure (ECS, DynamoDB, VPC) with CloudFormation (IaC) for consistent, repeatable deployments.</li>
+        <li>Provisioned secure AWS infrastructure (ECS, DynamoDB, VPC) with CloudFormation (IaC) for repeatable deployments.</li>
         <li>Integrated the Qwen3 LLM with the LINE Messaging API to deliver dynamic, context-aware product recommendations.</li>
-        <li>Implemented AWS SQS to decouple services and keep the system reliable during traffic spikes.</li>
-        <li>Optimized system performance to achieve sub-second API response times under high traffic.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="row"><span><span class="title">Firearm Detection for Public Safety</span><span class="stack"> | Python, YOLOv11, Roboflow</span></span><span class="when">Jan – May 2025</span></div>
-      <div class="sub">AI/ML Developer</div>
-      <ul class="points">
-        <li>Trained a YOLOv11 object-detection model to distinguish realistic firearms from water guns for public safety surveillance during Thailand’s Songkran Festival.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="row"><span><span class="title">Chalapao – Online Borrowing Website</span><span class="stack"> | Next.js, Deno, Docker</span></span><span class="when">Jan – May 2025</span></div>
-      <div class="sub">Frontend Developer</div>
-      <ul class="points">
-        <li>Developed a full-stack inventory management system, improving item-tracking efficiency.</li>
-        <li>Deployed with Docker to keep environments consistent and improve system reliability.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="row"><span><span class="title">Online Petition Submission Web App</span><span class="stack"> | Express, Spring Boot, Docker</span></span><span class="when">Aug – Dec 2024</span></div>
-      <div class="sub">Full-stack Developer</div>
-      <ul class="points">
-        <li>Developed a student petition tracking system to streamline the submission process.</li>
-        <li>Containerized services with Docker and collaborated in an Agile team for iterative feature delivery.</li>
+        <li>Implemented AWS SQS to decouple services and process messages asynchronously.</li>
+        <li>Set up Amazon CloudWatch dashboards to monitor each service&#8217;s response time.</li>
       </ul>
     </div>
   </section>
@@ -198,11 +200,11 @@ ul.points li { margin: 0; padding-left: 2px; }
     <h2 id="skills">Technical Skills</h2>
     <ul class="points">
       <li><span class="lead">Languages:</span> Python, JavaScript, Java, C, C++, SQL, Bash</li>
-      <li><span class="lead">Cloud &amp; DevOps:</span> AWS (EC2, S3, Lambda, DynamoDB, SQS, VPC, CloudFormation), Docker, GitHub Actions, Linux</li>
+      <li><span class="lead">Cloud:</span> AWS (EC2, ECS, EKS, Lambda, S3, DynamoDB, SQS, SNS, VPC, CloudWatch)</li>
+      <li><span class="lead">DevOps:</span> Terraform, CloudFormation, Docker, Kubernetes, Jenkins, GitHub Actions, ArgoCD, SonarQube, Trivy, Linux</li>
       <li><span class="lead">Frameworks:</span> React.js, Angular, Node.js, Express.js, Spring Boot, Quarkus, Tailwind CSS</li>
       <li><span class="lead">Databases:</span> MongoDB, MySQL</li>
-      <li><span class="lead">Data:</span> Pandas, data cleaning and visualization</li>
-      <li><span class="lead">Developer Tools:</span> Git/GitHub, Postman, Figma</li>
+      <li><span class="lead">Developer Tools:</span> Git/GitHub, SVN, Postman, Figma</li>
     </ul>
   </section>
 
@@ -210,15 +212,12 @@ ul.points li { margin: 0; padding-left: 2px; }
     <h2 id="lead">Leadership &amp; Activities</h2>
     <div class="entry">
       <div class="row"><span class="title">Welfare Staff, Thammasat Freshy Games</span><span class="when">Oct 2025</span></div>
-      <ul class="points"><li>Supported event operations and coordinated welfare services for participants and organizing teams.</li></ul>
     </div>
     <div class="entry">
       <div class="row"><span class="title">Event Staff, CSTU Open House</span><span class="when">Nov 2023 &amp; Nov 2024</span></div>
-      <ul class="points"><li>Guided prospective students with information and advice about the Computer Science program.</li></ul>
     </div>
     <div class="entry">
       <div class="row"><span class="title">Venue Staff, CSTU First Meet 2024</span><span class="when">Aug 2024</span></div>
-      <ul class="points"><li>Coordinated venue setup and ensured safety protocols for the CS freshman welcoming event.</li></ul>
     </div>
   </section>
 
