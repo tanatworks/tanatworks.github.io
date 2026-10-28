@@ -101,10 +101,28 @@ ul.points { margin: 1px 0 0; padding-left: 18px; }
 ul.points li { margin: 0; padding-left: 2px; }
 .lead { font-weight: 700; }
 
+/* Print button: on screen only */
+.print-btn {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 16px;
+  border: 0; border-radius: 999px;
+  background: var(--navy); color: #fff;
+  font: 600 10.5pt "Source Serif 4", Georgia, "Times New Roman", Times, serif;
+  box-shadow: 0 2px 8px rgba(20,30,60,.25);
+  cursor: pointer;
+}
+.print-btn:hover { background: #14305a; }
+.print-btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+.print-btn svg { width: 16px; height: 16px; }
+
 @media print {
   @page { size: A4; margin: 8mm 12mm 7mm; }
   body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .sheet { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; zoom: 1 !important; }
+  .print-btn { display: none; }
 }
 </style>
 </head>
@@ -113,7 +131,7 @@ ul.points li { margin: 0; padding-left: 2px; }
 
   <header>
     <h1>Tanat Kerdtip</h1>
-    <p class="headline">DevOps, DevSecOps &amp; Platform Engineering</p>
+    <p class="headline">DevOps, DevSecOps, and Platform Engineering</p>
     <ul class="contact">
       <li><a href="tel:+66991817913">(+66) 99 181 7913</a></li>
       <li><a href="mailto:tanat.kerdtip@gmail.com">tanat.kerdtip@gmail.com</a></li>
@@ -145,18 +163,18 @@ ul.points li { margin: 0; padding-left: 2px; }
       <div class="row"><span class="title">CDG Systems (CDG Group)</span><span class="when">Jun 2026 – Present</span></div>
       <div class="row sub"><span>Programmer Intern</span><span class="date">Bangkok, Thailand</span></div>
       <ul class="points">
-        <li>Rebuilt legacy enterprise web systems with a modern web stack, making them easier to maintain and use.</li>
-        <li>Built and tested RESTful APIs and database queries.</li>
-        <li>Worked in an Agile team, taking part in daily stand-ups and sprint reviews and managing code through Git.</li>
-        <li>Investigated and fixed bugs reported during testing, and documented changes for handover to the team.</li>
+        <li>Contribute to rebuilding legacy enterprise web systems with a modern web stack, making them easier to maintain and use</li>
+        <li>Build and test RESTful APIs and database queries</li>
+        <li>Collaborate in an Agile team through daily stand-ups and sprint reviews, managing code with Git</li>
+        <li>Fix bugs reported during testing, documenting each fix for team handover</li>
       </ul>
     </div>
     <div class="entry">
-      <div class="row"><span class="title">Thammasat University</span><span class="when">Mar – May 2026</span></div>
+      <div class="row"><span class="title">Thammasat University</span><span class="when">Mar 2026 – May 2026</span></div>
       <div class="row sub"><span>Teaching Assistant, CS222 Operating Systems</span><span class="date">Pathum Thani, Thailand</span></div>
       <ul class="points">
-        <li>Assisted the instructor with course tasks for a class of 80+ students.</li>
-        <li>Graded Linux, Bash, and C process-management assignments.</li>
+        <li>Graded Linux, Bash, and C process-management assignments for a class of 80+ students</li>
+        <li>Recorded assignment scores for the instructor</li>
       </ul>
     </div>
   </section>
@@ -165,33 +183,32 @@ ul.points li { margin: 0; padding-left: 2px; }
     <h2 id="proj">Projects</h2>
 
     <div class="entry">
-      <div class="row"><span><span class="title">Geemu – DevSecOps Pipeline on AWS</span><span class="stack"> | Jenkins, Terraform, EKS, ArgoCD, Trivy</span></span><span class="when">Mar – May 2026</span></div>
+      <div class="row"><span><span class="title">Geemu – DevSecOps Pipeline on AWS</span><span class="stack"> | Jenkins, Terraform, EKS, ArgoCD, Trivy</span></span><span class="when">Mar 2026 – May 2026</span></div>
       <div class="sub">DevOps Engineer</div>
       <ul class="points">
-        <li>Provisioned Jenkins on EC2 and an Amazon EKS cluster with Terraform, and automated ArgoCD setup in Jenkins.</li>
-        <li>Built a 12-stage Jenkins CI/CD pipeline with SAST (SonarQube), dependency scanning (OWASP), and container image scanning (Trivy).</li>
-        <li>Deployed to EKS via GitOps with ArgoCD, with GitHub Actions triggering builds and skipping [skip ci] commits.</li>
+        <li>Automated Amazon EKS setup in a Jenkins pipeline, from Terraform provisioning to ArgoCD installation</li>
+        <li>Built a 12-stage Jenkins CI/CD pipeline with SAST (SonarQube), dependency scanning (OWASP), and container image scanning (Trivy) that runs in ~3 minutes</li>
+        <li>Deployed to EKS via GitOps with ArgoCD, with GitHub Actions triggering builds and skipping [skip ci] commits</li>
       </ul>
     </div>
 
     <div class="entry">
-      <div class="row"><span><span class="title">MonitorDisaster Microservice</span><span class="stack"> | Node.js, Express, AWS (ECS, SQS, SNS, DynamoDB), Docker</span></span><span class="when">Jan – May 2026</span></div>
+      <div class="row"><span><span class="title">MonitorDisaster Microservice</span><span class="stack"> | Node.js, Express, AWS (ECS, SQS, SNS, DynamoDB), Docker</span></span><span class="when">Jan 2026 – May 2026</span></div>
       <div class="sub">Backend &amp; Cloud Developer</div>
       <ul class="points">
-        <li>Built a REST API that ingests real-time sensor data and publishes disaster alerts via Amazon SNS.</li>
-        <li>Processed cross-cloud events from Amazon SQS and stored area status and incident reports in DynamoDB.</li>
-        <li>Added a retry worker with exponential backoff and trace IDs to keep data consistent across services.</li>
+        <li>Built a REST API that ingests real-time sensor data and publishes disaster alerts via Amazon SNS</li>
+        <li>Processed cross-cloud events from Amazon SQS, storing area status and incident reports in DynamoDB</li>
+        <li>Added a retry worker with exponential backoff and trace IDs to keep data consistent across services</li>
       </ul>
     </div>
 
     <div class="entry">
-      <div class="row"><span><span class="title">Miley – Product Recommendation LINE Chatbot</span><span class="stack"> | AWS, CloudFormation, SQS, LINE API</span></span><span class="when">Aug – Dec 2025</span></div>
+      <div class="row"><span><span class="title">Miley – Product Recommendation LINE Chatbot</span><span class="stack"> | AWS, CloudFormation, SQS, LINE API</span></span><span class="when">Aug 2025 – Dec 2025</span></div>
       <div class="sub">Backend &amp; DevOps Developer</div>
       <ul class="points">
-        <li>Provisioned secure AWS infrastructure (ECS, DynamoDB, VPC) with CloudFormation (IaC) for repeatable deployments.</li>
-        <li>Built the LINE message path (API Gateway, ALB, ECS, SQS, Lambda) to the Qwen3 LLM and back to LINE.</li>
-        <li>Implemented AWS SQS to decouple services and process messages asynchronously.</li>
-        <li>Set up Amazon CloudWatch dashboards to monitor each service&#8217;s response time.</li>
+        <li>Co-provisioned AWS infrastructure (ECS, DynamoDB, VPC) with CloudFormation (IaC) for repeatable deployments</li>
+        <li>Co-built the LINE message path (API Gateway, ALB, ECS, SQS, Lambda) to the Qwen3 LLM and back to LINE</li>
+        <li>Set up Amazon CloudWatch dashboards to monitor each service&#8217;s response time</li>
       </ul>
     </div>
   </section>
@@ -200,10 +217,10 @@ ul.points li { margin: 0; padding-left: 2px; }
     <h2 id="skills">Technical Skills</h2>
     <ul class="points">
       <li><span class="lead">Languages:</span> Python, JavaScript, Java, C, C++, SQL, Bash</li>
-      <li><span class="lead">Cloud:</span> AWS (EC2, ECS, EKS, Lambda, S3, DynamoDB, SQS, SNS, VPC, CloudWatch)</li>
+      <li><span class="lead">Cloud:</span> AWS (EC2, ECS, EKS, Lambda, S3, SQS, SNS, VPC, CloudWatch)</li>
       <li><span class="lead">DevOps:</span> Terraform, CloudFormation, Docker, Kubernetes, Jenkins, GitHub Actions, ArgoCD, SonarQube, Trivy, Linux</li>
       <li><span class="lead">Frameworks:</span> React.js, Angular, Node.js, Express.js, Spring Boot, Quarkus, Tailwind CSS</li>
-      <li><span class="lead">Databases:</span> MongoDB, MySQL</li>
+      <li><span class="lead">Databases:</span> MySQL (SQL), Amazon DynamoDB (NoSQL)</li>
       <li><span class="lead">Developer Tools:</span> Git/GitHub, SVN, Postman, Figma</li>
     </ul>
   </section>
@@ -227,6 +244,10 @@ ul.points li { margin: 0; padding-left: 2px; }
   </section>
 
 </main>
+<button type="button" class="print-btn" onclick="window.print()" aria-label="Print resume">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+  Print
+</button>
 <script>
 (function () {
   if (window.self === window.top) return;
